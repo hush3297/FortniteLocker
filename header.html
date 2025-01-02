@@ -1,0 +1,102 @@
+<html>
+    <header>
+        <!--For unknown reasons if this is in a CSS file it won't work. So this is kinda our unintentional "Cocconut"-->
+        <style>
+            :root {
+                --bg-color-light: #f5f5f5;
+                --text-color-light: #333;
+                --bg-color-dark: #121212;
+                --text-color-dark: #f5f5f5;
+            }
+            .logo {
+                color: #f5f5f5;
+                justify-content: left;
+                display: inline-flex;
+                font-size: 30px; 
+            }
+            .dark-mode {
+                background-color: var(--bg-color-dark);
+                color: var(--text-color-dark);
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                background: #1e1e1e;
+                color: #fff;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+            .menu {
+                display: flex;
+                gap: 20px;
+            }
+            .menu a {
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+            .menu a:hover {
+                color: #f39c12;
+            }
+            .dark-mode-switch {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+            }
+            .toggle-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #fff;
+                color: #1e1e1e;
+                font-size: 18px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .dark-mode .toggle-icon {
+                background-color: #1e1e1e;
+                color: #f5f5f5;
+            }
+        </style>
+
+        <div class="logo">GameZone</div>
+        <nav class="menu">
+            <p onclick="PageLoad('index')">Home</p>
+            <p onclick="PageLoad('demo')">Demo</p>
+            <p onclick="PageLoad('')">Features</p>
+            <p onclick="PageLoad('')">Contact</p>
+        </nav>
+        <div style="justify-content: right;color: white;">
+            <div class="dark-mode-switch" onclick="toggleDarkMode()">
+                <div class="toggle-icon">☀️</div>
+                <span>Light Mode</span>
+            </div>
+        </div>
+
+        <!--Dark Mode-->
+        <script src="DarkMode.js" ></script>
+
+        <!--Dark Mode Toggle Function. Only in this script becuase it's only used here.-->
+        <script>
+            const darkMode = localStorage.getItem('darkMode');
+            console.log("Dark Mode: " + darkMode)
+            if (darkMode === 'enabled') {
+                document.body.classList.add('dark-mode');
+                const toggleIcon = document.querySelector('.toggle-icon');
+                const toggleText = document.querySelector('.dark-mode-switch span');
+                toggleIcon.textContent = '🌙';
+                toggleText.textContent = 'Dark Mode';
+            }
+            function PageLoad(name) {
+                localStorage.setItem('Redirect', name);
+            }
+        </script>
+    </header>
+</html>
