@@ -121,17 +121,23 @@ html {
   }
 }
 
-/* Header iframe Styling */
-iframe {
-  display: block;
-  width: 100%;
-  border: 0px;
+/*Locker Stuff */
+.LockerItem{
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  gap: 20px;
+
+  width: 35%; /* Adjust image width */
+  height: auto; /* Maintain aspect ratio */
+  border: none;
+  cursor: pointer;
 }
 
-/*Locker Stuff */
-.LockerItem {
-  /* Center Img */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+/* Locker item selected overlay */
+.locked {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
 }

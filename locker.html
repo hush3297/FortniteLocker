@@ -8,7 +8,7 @@
     <script src="backend.js" ></script>
   </head>
 
-  <body onload="initializePage('index')"> <!--Specify what page is currently being displayed so the backend knows what it needs to do-->
+  <body onload="initializePage('Locker')"> <!--Pass through the name of the page to the Javascript file-->
     <div id="loading-screen">Loading...</div>
 
     <!--Navbar-->
@@ -28,20 +28,11 @@
         </div>
     </header>
 
-    <!--Actual Content displayed on the page-->
-    <section id="home">
-      <h1>Welcome to GameZone</h1>
-      <p>Your hub for gaming news, reviews, and updates.</p>
-    </section>
-
-    <section id="features">
-      <h2>Features</h2>
-      <p>Explore our latest game reviews and in-depth articles.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Got questions? Reach out to us at support@gamezone.com</p>
-    </section>
+    <!--This is where the locker items are placed-->
+    <div class="LockerItem" id="Row1"> </div>
+    <br>
+    <div class="LockerItem" id="Row3"> </div>
+    <br>
+    <div class="LockerItem" id="Row5"> </div>
   </body>
 </html>
